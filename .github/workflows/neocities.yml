@@ -21,7 +21,7 @@ jobs:
         mkdir -p public
         cp index.html      public
         cp not_found.html  public
-        cp styles.css      public
+        cp style.css      public
 
     - name: Deploy to neocities
       uses: bcomnes/deploy-to-neocities@v2
