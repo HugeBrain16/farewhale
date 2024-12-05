@@ -1,9 +1,133 @@
-/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
-   HTML content. To learn how to do something, just try searching Google for questions like
-   "how to change link color." */
-
 body {
-  background-color: white;
-  color: black;
-  font-family: Verdana;
+  font-family: "Arapey", sans-serif;
+  background-color: #a7f0fc;
+  color: #00738c;
+}
+
+p {
+  white-space: pre-line;
+}
+
+h1, h2, h3, h4 {
+  color: #028fad;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+.text-highlight {
+  color: #05ddfa;
+}
+
+.container-layout {
+  display: flex;
+  margin: 2% 15% 5% 15%;
+}
+
+.container {
+  background-color: #dcf6fc;
+  padding: 15px;
+  margin: 5px;
+  border: 2px solid #028fad;
+  overflow: hidden;
+}
+
+.container-content a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 100ms;
+}
+
+.content-button {
+  font-style: italic;
+  text-decoration: underline !important;
+}
+
+.content-button:hover {
+  color: #05ddfa;
+}
+
+.container-main {
+  flex: 3;
+}
+
+.container-header {
+  border-bottom: 1px solid #a4d5e0;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.container-content tr {
+  margin-bottom: 15px;
+}
+
+.container-side {
+  flex: 1;
+  padding: 5px;
+}
+
+.container-side > .container-header {
+  padding-left: 0;
+}
+
+.content-navbutton {
+  padding: 5px;
+  margin: 2px;
+  background-color: #beeffa;
+  transition: 0.1s;
+  cursor: pointer;
+  user-select: none;
+  display: block;
+}
+
+.content-navbutton:hover {
+  background-color: #b5dfe8;
+}
+
+.content-navbutton:active {
+  background-color: #a2d5e0;
+}
+
+.content-navbutton-active {
+  background-color: #a2d5e0;
+}
+
+#banner h1 {
+  font-size: xxx-large;
+}
+
+#whale {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  height: 215px;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+#whale:hover {
+  transform: scale(1.05) rotate(-1.5deg);
+}
+
+#whale:active {
+  transform: scale(1);
+}
+
+#update-panel {
+  overflow-y: scroll;
+  height: 300px;
+  padding: 5px;
+}
+
+@media (max-width: 1200px) {
+  .container-layout {
+    margin: 5%;
+    flex-direction: column;
+  }
+
+  #whale {
+    height: 140px;
+  }
 }
