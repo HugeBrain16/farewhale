@@ -79,6 +79,9 @@ ul {
   transition: 0.1s;
   cursor: pointer;
   user-select: none;
+}
+
+.content-navbutton a {
   display: block;
 }
 
