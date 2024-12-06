@@ -24,6 +24,10 @@ jobs:
         cp not_found.html  public
         cp style.css       public
         cp favicon.ico     public
+        cp music.html      public
+        cp blog.html       public
+        cp links.html      public
+        cp gallery.html    public
 
     - name: Deploy to neocities
       uses: bcomnes/deploy-to-neocities@v2

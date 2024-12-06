@@ -17,6 +17,10 @@ ul {
   margin: 0;
 }
 
+ul > li {
+  list-style: none;
+}
+
 .text-highlight {
   color: #05ddfa;
 }
@@ -24,6 +28,7 @@ ul {
 .container-layout {
   display: flex;
   margin: 2% 15% 5% 15%;
+  align-items: flex-start;
 }
 
 .container {
@@ -49,8 +54,12 @@ ul {
   color: #05ddfa;
 }
 
+.content-image {
+  border: 2px solid #028fad;
+}
+
 .container-main {
-  flex: 3;
+  flex: 1;
 }
 
 .container-header {
@@ -64,8 +73,9 @@ ul {
 }
 
 .container-side {
-  flex: 1;
+  flex: 0 0 150px;
   padding: 5px;
+  max-width: 150px;
 }
 
 .container-side > .container-header {
@@ -120,14 +130,24 @@ ul {
 
 #update-panel {
   overflow-y: scroll;
-  height: 300px;
+  height: 200px;
   padding: 5px;
+}
+
+#links-panel .content-navbutton {
+  margin: 0 5px 5px 5px;
 }
 
 @media (max-width: 1200px) {
   .container-layout {
     margin: 5%;
     flex-direction: column;
+    align-items: normal;
+  }
+
+  .container-side {
+    flex: 1;
+    max-width: unset;
   }
 
   #whale {
