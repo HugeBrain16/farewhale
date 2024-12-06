@@ -25,7 +25,7 @@ jobs:
         cp style.css       public
         cp favicon.ico     public
         cp music.html      public
-        cp blog.html       public
+        cp blogs.html      public
         cp links.html      public
         cp gallery.html    public
 
