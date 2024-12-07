@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "Arapey";
+  src: url('/assets/fonts/Arapey-Regular.woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Arapey";
+  src: url('/assets/fonts/Arapey-Italic.woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
 body {
   font-family: "Arapey", sans-serif;
   background-color: #a7f0fc;
