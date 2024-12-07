@@ -22,7 +22,6 @@ jobs:
         cp -r assets       public
         cp index.html      public
         cp not_found.html  public
-        cp style.css       public
         cp favicon.ico     public
         cp music.html      public
         cp blogs.html      public
