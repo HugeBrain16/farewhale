@@ -27,6 +27,7 @@ jobs:
         cp blogs.html      public
         cp links.html      public
         cp gallery.html    public
+        cp dump.html       public
 
     - name: Deploy to neocities
       uses: bcomnes/deploy-to-neocities@v2
