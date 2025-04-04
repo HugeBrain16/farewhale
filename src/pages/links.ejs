@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <%- include("../components/meta.ejs", {pageTitle: "My Links"}) %>
+  </head>
+  <body>
+    <%- include("../components/banner.ejs") %>
+    <div class="container-layout">
+      <%- include("../components/navbar.ejs", { current_page: "links" }) %>
+      <div class="container container-main">
+        <div id="links-panel" class="container-content" align="center">
+          <h1>Linkies!</h1>
+          <p>
+            I'm not on a lot of social media platforms but you can find me here:
+          </p>
+          <ul>
+            <li>
+              <p class="content-navbutton"><a target="_blank" href="https://github.com/hugebrain16">Github</a></p>
+            </li>
+            <li>
+              <p class="content-navbutton"><a target="_blank" href="https://last.fm/user/gogx420">Last.fm</a></p>
+            </li>
+          </ul>
+          <p>
+            If you wanna contact me, you can reach me through my email: <b>hugebrain16@gmail.com</b>
+            ...or my <a class="content-button" href="https://farewhale.atabook.org">guestbook</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="/assets/scripts/modal.js"></script>
+  </body>
+</html>

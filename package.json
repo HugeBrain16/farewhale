@@ -1,0 +1,14 @@
+{
+  "name": "farewhale",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "nodemon --watch src --watch assets --watch build.js --ext js,ejs,html,css,json --exec 'npm run build'"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "fs-extra": "^11.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

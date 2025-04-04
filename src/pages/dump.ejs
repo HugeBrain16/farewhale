@@ -1,36 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>farewhale's space</title>
-    <link href="/assets/styles/style.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/styles/modal.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <%- include("../components/meta.ejs", {pageTitle: "My Collections"}) %>
   </head>
   <body>
-    <div id="banner" align="center">
-      <h1>farewhale's space</h1>
-    </div>
+    <%- include("../components/banner.ejs") %>
     <div class="container-layout">
-      <div class="container container-side">
-        <div class="container-content">
-          <h2>Personal</h2>
-          <ul>
-            <li><p class="content-navbutton"><a href="/index.html">Home</a></p></li>
-            <li><p class="content-navbutton"><a href="/gallery.html">Gallery</a></p></li>
-            <li><p class="content-navbutton"><a href="/music.html">My Music</a></p></li>
-            <li><p class="content-navbutton"><a href="/blogs.html">My Blog</a></p></li>
-            <li><p class="content-navbutton content-navbutton-active"><a href="#">My Collections</p></li>
-            <li><p class="content-navbutton"><a href="/links.html">My Links</a></p></li>
-          </ul>
-          <h2>Misc</h2>
-          <ul>
-            <li><p class="content-navbutton"><a href="#">Archive</a></p></li>
-            <li><p class="content-navbutton"><a href="https://farewhale.atabook.org">Guestbook</a></p></li>
-          </ul>
-        </div>
-      </div>
+      <%- include("../components/navbar.ejs", { current_page: "collections" }) %>
       <div class="container container-main">
         <div class="container-header">
           <h1>My Collections!</h1>
@@ -39,7 +15,7 @@
           <h2>~ Buttons ~</h2>
           <img src="/assets/butts/onlinux.gif">
           <img src="/assets/butts/neocities.gif">
-          <img src="/assets/butts/firefox.gif"> 
+          <img src="/assets/butts/firefox.gif">
           <img src="/assets/butts/chrome.gif">
           <img src="/assets/butts/artix.gif">
           <img src="/assets/butts/neovim.png">
@@ -71,7 +47,7 @@
           <img src="/assets/butts/nyan.gif">
           <img src="/assets/butts/archlinux.gif">
           <img src="/assets/butts/tran.jpg">
-          <img src="/assets/butts/wiby.jpg"> 
+          <img src="/assets/butts/wiby.jpg">
           <img src="/assets/butts/dwarf.jpg">
           <img src="/assets/butts/azumanga.gif">
           <img src="/assets/butts/emulate.gif">
@@ -92,13 +68,13 @@
           <h2>~ Stamps ~</h2>
           <img src="/assets/stamps/egg.png">
           <img src="/assets/stamps/100rads.jpg">
-          <img src="/assets/stamps/bobby-sponge.gif"> 
+          <img src="/assets/stamps/bobby-sponge.gif">
           <img src="/assets/stamps/bread.png">
           <img src="/assets/stamps/le_mon.webp">
           <img src="/assets/stamps/colon.webp">
           <img src="/assets/stamps/jerma.gif">
           <img src="/assets/stamps/cringe.gif">
-          <img src="/assets/stamps/ilovemusic.gif"> 
+          <img src="/assets/stamps/ilovemusic.gif">
           <img src="/assets/stamps/animalcrossing.gif">
           <img src="/assets/stamps/joel.gif">
           <img src="/assets/stamps/sims.gif">
@@ -112,13 +88,13 @@
           <img src="/assets/stamps/nonbinary.png">
           <img src="/assets/stamps/stalker.gif">
           <img src="/assets/stamps/whalesheart.gif">
-          <img src="/assets/stamps/fwag.gif"> 
+          <img src="/assets/stamps/fwag.gif">
           <img src="/assets/stamps/binary.gif">
           <img src="/assets/stamps/kinpark.gif">
           <img src="/assets/stamps/earthe.gif">
           <img src="/assets/stamps/freaks.gif">
           <img src="/assets/stamps/shake.gif">
-          <img src="/assets/stamps/music.gif"> 
+          <img src="/assets/stamps/music.gif">
           <img src="/assets/stamps/soad.gif">
           <img src="/assets/stamps/silenthill.gif">
           <img src="/assets/stamps/yumyum.gif">

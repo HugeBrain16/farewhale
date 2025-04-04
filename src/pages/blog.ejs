@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include("../components/meta.ejs", {pageTitle: "Blogs"}) %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+    <link rel="stylesheet" href="/assets/styles/tree.css">
+  </head>
+  <body>
+    <%- include("../components/banner.ejs") %>
+    <div class="container-layout">
+      <%- include("../components/navbar.ejs", { current_page: "blogs" }) %>
+      <div class="container container-main">
+        <div class="container-content">
+          <p>Blog index:</p>
+          <div class="blog-entry">
+            <div class="tree-folder">
+              <div class="tree-label blog-item">microblog/</div>
+              <div class="tree-content blog-item">
+                <p><small>04/04/2025</small></p>
+                <p>i decided to use ejs for conveniences sake
+
+                  i like it so far</p>
+              </div>
+              <div class="tree-content blog-item">
+                <p><small>03/04/2025</small></p>
+                <p>it's been a while since last time i wrote stuff here
+
+                i've been listening to the album Nurture by Porter Robinson alot.. it's so so good i love it.
+                also i watched all 3 sonic movies, they were awesome
+
+                anyways, just wanted an excuse to update this website
+                </p>
+              </div>
+              <div class="tree-content blog-item">
+                <p><small>31/12/2024</small></p>
+                <p>I listened to some Porter Robinson's songs earlier today, and it inspired me to make a song.
+                  so.. here's <a class="content-button" href="https://youtu.be/Jeef04l34T0" target="_blank">tangerine (a time for you)</a>, a little song I made in under 5 hours.
+
+                  Also I'd like to take this chance to say Happy New Year to you, yippe!!
+
+                  oh and btw my fav songs are cheerleader and russian roulette</p>
+              </div>
+              <div class="tree-content blog-item">
+                <p><small>25/12/2024</small></p>
+                <p>Hello! I hope this works ^_^
+
+                I'll write blog posts in separate pages..</p>
+              </div>
+            </div>
+            <div class="tree-folder">
+              <div class="tree-label blog-item">blog/</div>
+              <div class="tree-content">
+                <div class="tree-folder">
+                  <div class="tree-label blog-item">[04/04/2025] - test</div>
+                  <div class="tree-content blog-item"><%- include("blog/test.ejs") %></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/assets/scripts/modal.js"></script>
+    <script src="/assets/scripts/tree.js"></script>
+  </body>
+</html>

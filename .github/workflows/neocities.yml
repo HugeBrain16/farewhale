@@ -14,24 +14,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-    - name: Prepare source files
-      run: |
-        mkdir -p public
-        cp -r assets       public
-        cp index.html      public
-        cp not_found.html  public
-        cp favicon.ico     public
-        cp music.html      public
-        cp blogs.html      public
-        cp links.html      public
-        cp gallery.html    public
-        cp dump.html       public
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+          cache: npm
 
-    - name: Deploy to neocities
-      uses: bcomnes/deploy-to-neocities@v2
-      with:
-        api_token: ${{ secrets.NEOCITIES_API_KEY }}
-        cleanup: true
-        dist_dir: public
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to neocities
+        uses: bcomnes/deploy-to-neocities@v3
+        with:
+          api_token: ${{ secrets.NEOCITIES_API_KEY }}
+          cleanup: true
+          dist_dir: dist
