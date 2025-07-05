@@ -13,16 +13,16 @@
 }
 
 :root {
-  --color-background: #a7f0fc;
-  --color-container-background: #dcf6fc;
-  --color-highlight: #028fad;
+  --color-background: #002e35;
+  --color-container-background: #004455;
+  --color-highlight: #7cb5c4;
   --color-border-thin: #a4d5e0;
 }
 
 body {
   font-family: "Arapey", sans-serif;
   background-color: var(--color-background);
-  color: #00738c;
+  color: #b6f2ff;
 }
 
 p {
@@ -46,7 +46,7 @@ ul > li {
 }
 
 .text-highlight {
-  color: #05ddfa;
+  color: #00e1ff;
 }
 
 .container-layout {
@@ -109,7 +109,7 @@ ul > li {
 .content-navbutton {
   padding: 5px;
   margin: 2px;
-  background-color: #beeffa;
+  background-color: #3a7380;
   transition: 0.1s;
   cursor: pointer;
   user-select: none;
@@ -120,7 +120,7 @@ ul > li {
 }
 
 .content-navbutton:hover {
-  background: linear-gradient(to right, #b5dfe8, #beeffa);
+  background: linear-gradient(to right, #4fa3b6, #135e6e);
 }
 
 .content-navbutton:active {
@@ -128,13 +128,13 @@ ul > li {
 }
 
 .content-navbutton-active {
-  background: linear-gradient(to right, #a2d5e0, #beeffa);
+  background: linear-gradient(to right, #4fa3b6, #135e6e);
 }
 
 .blog-item,
 .blog-label {
-  background-color: #c2ecf2;
-  border-left: 5px solid #028fad;
+  background-color: #3a7380;
+  border-left: 5px solid #a2d5e0;
   padding-left: 8px;
   padding-top: 2px;
   padding-bottom: 2px;
@@ -142,28 +142,18 @@ ul > li {
 }
 
 .blog-label {
-  background: linear-gradient(to right, #9fd6e0 0%, #c2ecf2 15%);
+  background: linear-gradient(to right, #4fa3b6 0%, #135e6e 15%);
 }
 
 #banner h1 {
   font-size: xxx-large;
 }
 
-#whale {
+#pfp {
   float: left;
   margin-right: 10px;
   margin-bottom: 10px;
   height: 215px;
-  transition: all 0.1s ease-in-out;
-  cursor: pointer;
-}
-
-#whale:hover {
-  transform: scale(1.05) rotate(-1.5deg);
-}
-
-#whale:active {
-  transform: scale(1);
 }
 
 #update-panel {
@@ -196,7 +186,7 @@ ul > li {
     max-width: unset;
   }
 
-  #whale {
+  #pfp {
     height: 140px;
   }
 }
