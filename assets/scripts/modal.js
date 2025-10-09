@@ -15,6 +15,12 @@ function openModal(img) {
   modal.appendChild(modalContent);
   modal.style.display = "flex";
   modalContent.src = img;
+
+  modalContent.addEventListener('click', (event) => {
+    if (event.target = modalContent) {
+      modalContent.classList.toggle("zoomed");
+    }
+  });
 }
 
 document.body.appendChild(modal);
