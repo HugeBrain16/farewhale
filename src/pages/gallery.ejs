@@ -8,14 +8,33 @@
     <div class="container-layout">
       <%- include("../components/navbar.ejs", { current_page: "gallery" }) %>
       <div class="container container-main">
-        <div class="container-header">
-          <h1>Gallery!</h1>
-        </div>
         <div class="container-content">
-          <h1>WIP WIP WIP WIP</h1>
+          <div id="walls">
+            <% const images = [
+              ["https://i.imgur.com/gFVaurF.gif"],
+              ["/assets/whale.png"],
+              ["https://media1.tenor.com/m/sCWDubfFPbkAAAAC/stalker-soc.gif"],
+              ["https://media.tenor.com/7PmDoi6Bt8sAAAAi/skat-bandit-stalker.gif"],
+              ["https://media1.tenor.com/m/cxKf4rSyAscAAAAC/walking-out-strelok-walking-out.gif"],
+              ["https://i.imgur.com/TlK7UTZ.png"],
+              ["https://media1.tenor.com/m/M3Ve8Isi6jYAAAAC/stalker-stalker-shadow-of-chernobyl.gif", 400],
+              ["https://i.pinimg.com/736x/88/76/0a/88760ac9bbe8df1f5ade7c06db3c3cbf.jpg", 600],
+              ["https://media1.tenor.com/m/bVT3x7s95MwAAAAC/gerard-way-mcr.gif", 400],
+              ["https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png"],
+            ]; %>
+
+            <% images.forEach(image => { %>
+              <% if (image.length > 1) { %>
+                <img class="gallery" width="<%= image[1] %>px" src="<%= image[0] %>">
+              <% } else { %>
+                <img class="gallery" src="<%= image[0] %>">
+              <% } %>
+            <% }); %>
+          </div>
         </div>
       </div>
     </div>
     <script src="/assets/scripts/modal.js"></script>
+    </script>
   </body>
 </html>

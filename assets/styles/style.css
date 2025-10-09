@@ -72,6 +72,7 @@ ul > li {
 .content-button {
   font-style: italic;
   text-decoration: underline !important;
+  cursor: pointer;
 }
 
 .content-button:hover {
@@ -150,7 +151,7 @@ ul > li {
 }
 
 #pfp {
-  float: left;
+  float: right;
   margin-right: 10px;
   margin-bottom: 10px;
   height: 215px;
@@ -172,6 +173,17 @@ ul > li {
 
 #links-panel .content-navbutton {
   margin: 0 5px 5px 5px;
+}
+
+#walls {
+  column-count: 3;
+  column-gap: 0;
+  margin: 5px;
+}
+
+#walls img {
+  width: -100%;
+  max-width: 800px;
 }
 
 @media (max-width: 1200px) {

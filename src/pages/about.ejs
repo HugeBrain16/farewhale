@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include("../components/meta.ejs", {pageTitle: "About me"}) %>
+  </head>
+  <body>
+    <%- include("../components/banner.ejs") %>
+    <div class="container-layout">
+      <%- include("../components/navbar.ejs", { current_page: "about" }) %>
+      <div class="container container-main">
+        <div class="container-header">
+          <h1>About me!</h1>
+        </div>
+        <div class="container-content">
+          <table>
+            <tr>
+              <img id="pfp" class="gallery" title="Dewa :3&#010;&#010;pfp by @soggytiggy &lt;3" src="/assets/pfp.png">
+              <p>Hello, I'm <span class="text-highlight">Sudo</span>
+              19 years old from Indonesia, I go by <span class="text-highlight">he/they</span>
+
+              I like food, cooking, music, and talking about computers or linux :3
+              I do coding/programming and make music as a hobby
+              
+              I don't play games that much anymore, but I will always love the S.T.A.L.K.E.R. series &lt;3
+
+              I mainly listen to rock and electronic music, but I'm open to any other genres
+              top 5 of my current fav artists (maybe in order):
+              - LUNA SEA
+              - L'Arc-en-Ciel
+              - Porter Robinson
+              - Efek Rumah Kaca
+              - Venetian Snares
+
+              I like minimalism, which is why the site theme might look... minimalist
+              things might change when I finally get bored of something
+              </p>
+              <h2>My current setup</h2>
+              <img class="gallery content-image" width="45%;" src="https://i.imgur.com/7T6CRqh.png">
+              <p>Thinkpad x270 running on Arch Linux /w Hyprland</p>
+            </tr>
+          </table>
+        </div>
+      </div> 
+    </div>
+    <script src="/assets/scripts/modal.js"></script>
+  </body>
+</html>
