@@ -12,8 +12,8 @@
 
 .modal-content {
   margin: auto;
-  width: 80%;
-  max-width: 700px;
+  width: 100%;
+  max-width: 950px;
   cursor: zoom-in;
 }
 
