@@ -1,26 +1,15 @@
-@font-face {
-  font-family: "Arapey";
-  src: url("/assets/fonts/Arapey-Regular.woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Arapey";
-  src: url("/assets/fonts/Arapey-Italic.woff2");
-  font-weight: normal;
-  font-style: italic;
-}
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
   --color-background: #002e35;
   --color-container-background: #004455;
   --color-highlight: #7cb5c4;
   --color-border-thin: #a4d5e0;
+  font-size: 24px;
 }
 
 body {
-  font-family: "Arapey", sans-serif;
+  font-family: "Gentium Plus", sans-serif;
   background-color: var(--color-background);
   color: #b6f2ff;
 }
@@ -51,7 +40,7 @@ ul > li {
 
 .container-layout {
   display: flex;
-  margin: 2% 15% 5% 15%;
+  margin: 2% 10% 5% 10%;
   align-items: flex-start;
 }
 
@@ -98,9 +87,9 @@ ul > li {
 }
 
 .container-side {
-  flex: 0 0 150px;
+  flex: 0 0 200px;
   padding: 5px;
-  max-width: 150px;
+  max-width: 200px;
 }
 
 .container-side > .container-header {
@@ -147,14 +136,14 @@ ul > li {
 }
 
 #banner h1 {
-  font-size: xxx-large;
+  font-size: 2.8rem;
 }
 
 #pfp {
   float: right;
   margin-right: 10px;
   margin-bottom: 10px;
-  height: 215px;
+  height: 315px;
 }
 
 #update-panel {
