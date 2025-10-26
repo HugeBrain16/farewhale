@@ -176,8 +176,12 @@ ul > li {
 }
 
 @media (max-width: 1200px) {
+  :root {
+    font-size: 16px;
+  }
+
   .container-layout {
-    margin: 5%;
+    margin: 0.4%;
     flex-direction: column;
     align-items: normal;
   }
@@ -188,6 +192,6 @@ ul > li {
   }
 
   #pfp {
-    height: 140px;
+    height: 180px;
   }
 }
