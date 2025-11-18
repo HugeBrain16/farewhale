@@ -8,10 +8,6 @@
   display: block;
 }
 
-.tree-folder.expanded > .tree-label {
-  font-style: italic;
-}
-
 .tree-content {
   margin-left: 15px;
   display: none;
