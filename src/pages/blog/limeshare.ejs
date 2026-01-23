@@ -1,0 +1,65 @@
+<p>For the past few weeks I've been really motivated to do some coding.
+I thought it would be fun to start something really hard to challenge myself... like, for example, coding in C.
+I started with coding an OS from scratch. It was really fun for the most part, learning about how an OS really works under the hood,
+how it boots and manages hardware, implementing all the drivers required for that, etc.
+I'm considering making a separate blog for the project, but for now there's really not much to write about,
+apart from the crude custom file system implementation with a super simple text editor and a neofetch clone.
+I'll write about every little thing and the deeper low-level hardware stuff when I have motivations.
+
+check out the project: <a class="content-button" href="https://github.com/hugebrain16/mango" target="_blank">Mango OS</a>
+
+Anyways, here I mainly wanna talk about my experience with coding a linux app.
+
+I use Discord everyday for the screenshare feature, it works pretty okay out of the box,
+but it isn't as smooth as using a custom fork like Vesktop or Goofcord. Even then, I would
+still encounter some issues. In my case, it's with the audio desync and the choppyness (it doesn't happen often, but it can get annoying),
+and there are only limited settings you can change unless you have nitro, but even with that, you'd only unlock higher stream quality settings
+which is not useful at all in my case. So, I would really like if there would be a screensharing app that allows me to tune every parameter,
+but I couldn't find any.
+
+I thought, how hard would it be to make a screenshare app, from scratch... in C? So, I got started.
+I immediately knew which GUI framework I was gonna choose to go with, GTK4! mainly because I wanted something
+that fits the linux aesthetic. I also considered using Qt, but with what I would consider an experimental project it just seemed too much.
+The API is pretty neat for the most part, I like how the whole Glib ecosystem is included within it. It honestly wasnt much of a challenge
+building the interface and integrating it in the code. I used Glade for the UI designer, and I use gtk4-builder-tool
+to convert the .glade file to a GTK4 compatible .ui file. I chose to design the UI to look like OBS with the preview screen on top,
+and the controls (buttons, etc) below it.
+
+Implementing screen capture for Wayland takes a couple steps, but before that, I wanted to see how I could embed a video source in the UI.
+I thought of GStreamer for the multimedia framework, because I'd seen Wine use it to embed game intro video in the game window,
+and it also seemed like the only practical choice for this use case. I read a tutorial on the GStreamer website about integrating GStreamer with a GUI Toolkit.
+In the example it uses GTK3, which uses <span class="content-code">gtkglsink</span> as the output. At the time,
+I hadn't learned yet that <span class="content-code">gtkglsink</span> would only work for GTK3.
+I had to encounter a problem that took me quite a while to figure out that it actually wasn't meant to be used for GTK4.
+For GTK4, it's <span class="content-code">gtk4paintablesink</span>. It's pretty similar to <span class="content-code">gtkglsink</span>, but instead of having GtkWidget for the display,
+it has a GdkPaintable object, which is basically a framebuffer object for a display widget, like, for example, GtkPicture.
+
+from what i learned the most bare bones working pipeline would look something like:
+<span class="content-code">videotestsrc ! videoconvert ! video/x-raw,format=RGBA ! gtk4paintablesink name=preview_sink</span>
+I also learned that the encoder could overload and stall the pipeline if I didn't put <span class="content-code">queue</span> before it.
+Normally, it wouldn't show me if an error had occured, unless I run the program with GST_DEBUG=2, or a better way is to attach the bus message watcher to a callback instead.
+That way I could mark each pipelines with a prefix, which makes tracking errors easier.
+
+In order to get the screen capture working for Wayland, xdg portal request has to be implemented to create a screenshare session.
+In my case (on Hyprland) it would show a dialog of which screen or window I wanna choose to be shared, and when selected it would return a stream id.
+The stream id will be used with the pipewiresrc plugin, like this:
+<span class="content-code">pipewiresrc path={stream_id}</span>
+
+The last thing is to figure out how to stream the source, I was lucky that I chose GStreamer because it has a RTSP plugin support.
+For this, the pipeline output needs to be an rtp payload plugin (e.g rtph264pay) and it has to have a name attribute set to "pay0" for example.
+Before the data can be sent as payload, it has to go through h264parse or other appropriate codec to be serialized first.
+
+Eventually, I would encounter the annoying error with the pipewiresrc plugin.
+it would complain at random times about some "unhandled format" no matter what different format filters I tried.
+Until now, I still haven't found a solution for it. I've been stuck with trying to fix this error and got no different result,
+and I have since only lost motivation to continue working on it...
+It might be just a Hyprland specific issue, but I'm too lazy to test it on another setup right now.
+
+X11 support is implemented but is untested.
+
+Repo: <a class="content-button" href="https://github.com/hugebrain16/limeshare" target="_blank">Limeshare</a>
+
+Anyways, C is a fun language, I so love the simplicity. It's especially fun to work with for my OS project.
+
+I'll update on this if I'm not lazy and if I remember...
+</p>

@@ -121,6 +121,10 @@ ul > li {
   background: linear-gradient(to right, #4fa3b6, #135e6e);
 }
 
+.content-code {
+  font-family: monospace;
+}
+
 .blog-item,
 .blog-label {
   background-color: #3a7380;
