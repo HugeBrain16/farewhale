@@ -25,9 +25,10 @@ building the interface and integrating it in the code. I used Glade for the UI d
 to convert the .glade file to a GTK4 compatible .ui file. I chose to design the UI to look like OBS with the preview screen on top,
 and the controls (buttons, etc) below it.
 
-Implementing screen capture for Wayland takes a couple steps, but before that, I wanted to see how I could embed a video source in the UI.
-I thought of GStreamer for the multimedia framework, because I'd seen Wine use it to embed game intro video in the game window,
-and it also seemed like the only practical choice for this use case. I read a tutorial on the GStreamer website about integrating GStreamer with a GUI Toolkit.
+Implementing screen capture for Wayland would take a couple steps more compared to X11, but before all of that,
+I wanted to see how I could embed a video source in the UI. I thought of GStreamer for the multimedia framework,
+because I'd seen Wine use it to embed game intro video in the game window, and it also seemed like the only practical
+choice for this use case. I read a tutorial on the GStreamer website about integrating GStreamer with a GUI Toolkit.
 In the example it uses GTK3, which uses <span class="content-code">gtkglsink</span> as the output. At the time,
 I hadn't learned yet that <span class="content-code">gtkglsink</span> would only work for GTK3.
 I had to encounter a problem that took me quite a while to figure out that it actually wasn't meant to be used for GTK4.
@@ -62,4 +63,10 @@ Repo: <a class="content-button" href="https://github.com/hugebrain16/limeshare" 
 Anyways, C is a fun language, I so love the simplicity. It's especially fun to work with for my OS project.
 
 I'll update on this if I'm not lazy and if I remember...
+
+<i>Update #1:</i>
+So my guess was right! it just doesn't work on hyprland... i almost went insane
+
+I tested it on kde plasma setup and it works it didnt crash !!
+I also did a quick test for the x11 support on i3 and it worked as well!
 </p>
