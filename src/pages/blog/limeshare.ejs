@@ -13,7 +13,7 @@ Anyways, here I mainly wanna talk about my experience with coding a linux app.
 I use Discord everyday for the screenshare feature, it works pretty okay out of the box,
 but it isn't as smooth as using a custom fork like Vesktop or Goofcord. Even then, I would
 still encounter some issues. In my case, it's with the audio desync and the choppyness (it doesn't happen often, but it can get annoying),
-and there are only limited settings you can change unless you have nitro, but even with that, you'd only unlock higher stream quality settings
+and there are only limited settings you can change, even if you have nitro, you could only unlock higher stream quality settings
 which is not useful at all in my case. So, I would really like if there would be a screensharing app that allows me to tune every parameter,
 but I couldn't find any.
 
@@ -46,7 +46,7 @@ In my case (on Hyprland) it would show a dialog of which screen or window I wann
 The stream id will be used with the pipewiresrc plugin, like this:
 <span class="content-code">pipewiresrc path={stream_id}</span>
 
-The last thing is to figure out how to stream the source, I was lucky that I chose GStreamer because it has a RTSP plugin support.
+The last thing is to figure out how to stream the source, I was lucky that I chose GStreamer because it has RTSP plugin support.
 For this, the pipeline output needs to be an rtp payload plugin (e.g rtph264pay) and it has to have a name attribute set to "pay0" for example.
 Before the data can be sent as payload, it has to go through h264parse or other appropriate codec to be serialized first.
 
