@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include("../../components/meta.ejs", {pageTitle: "Artfight Template"}) %>
+    <%- include("../../components/artfight.ejs") %>
+  </head>
+  <body style="margin: 0; background: inherit;">
+  	<iframe id="preview" class="if-artfight-preview" src="/assets/templates/artfight.html"></iframe>
+  	<script>
+  	$("#preview").on("load", function() {
+  		const doc = $(this.contentDocument);
+ 
+  		doc.find(".profile-description").html(`<!--
+COLORS:
+Text: #fff
+Dark text: #125ca6
+Border: #fff
+-->
+<div style="padding: 5%; border: 8px solid #fff; border-radius: 2px; width: 100%; height: 100%; background: no-repeat url('https://i.imgur.com/ANQPrn6.jpeg'); background-size: cover; overflow-y: auto;">
+	<div class="row justify-content-center no-gutters">
+        <div class="col-2 mr-3" style="margin-top: 5%;">
+            <div style="border: 4px solid #fff; border-radius: 5px; margin-top: -100px;">
+                <div style="background: no-repeat url('https://i.imgur.com/Vxqdu5I.gif'); background-size: cover; padding-bottom: 30%;">
+                    <div style="background: no-repeat url('https://i.imgur.com/DDaXRWN.png'); background-position: 0 -5px; height: 100px;"></div>
+                    <div class="pl-4 pr-4 d-flex flex-column">
+
+                        <!-- check/cross based on your preference! -->
+                        <p class="mb-2" style="margin: 0;"><span style="font-family: Courier New; color: #125ca6; background: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 5px;">
+                            Revenges: <!-- check start --><i class="fa-solid fa-check"></i><!-- check end --> <!-- cross start --><i class="fa-solid fa-xmark"></i><!-- cross end -->
+                        </span></p>
+                        <p class="mb-2" style="margin: 0;"><span style="font-family: Courier New; color: #125ca6; background: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 5px;">
+                            Friendly Fire: <!-- check start --><i class="fa-solid fa-check"></i><!-- check end --> <!-- cross start --><i class="fa-solid fa-xmark"></i><!-- cross end -->
+                        </span></p>
+                        <p class="mb-2" style="margin: 0;"><span style="font-family: Courier New; color: #125ca6; background: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 5px;">
+                            Revenge Chains: <!-- check start --><i class="fa-solid fa-check"></i><!-- check end --> <!-- cross start --><i class="fa-solid fa-xmark"></i><!-- cross end -->
+                        </span></p>
+
+                        <!-- You can change/add the items of these lists -->
+                        <p class="mt-4" style="margin: 0; white-space: pre-line; background: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 5px;"><span style="font-family: Courier New; color: #125ca6;">I can draw:
+                        - Thing
+                        - Thing
+                        - Thing
+                        - Thing
+                        </span></p>
+                        <p class="mt-2" style="margin: 0; white-space: pre-line; background: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 5px;"><span style="font-family: Courier New; color: #125ca6;">I can't draw:
+                        - Thing
+                        - Thing
+                        - Thing
+                        - Thing
+                        </span></p>
+                    </div>
+                    <div class="mt-4 text-right">
+                        <img style="width: 200px;" src="https://i.imgur.com/sCjx1hz.gif">
+                    </div>
+                </div>
+                <div style="margin-top: -100px; background: no-repeat url('https://i.imgur.com/R2jZ9Fw.png'); background-position: 0 34px; height: 100px;"></div>
+            </div>
+            <div class="text-center mt-2">
+                <!-- Replace the <a> link with your own character randomizer link -->
+                <a href="https://randomurl.github.io">
+                    <img class="fa-bounce" style="width: 200px; --fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0;--fa-animation-duration: 0.85s;" src="https://i.imgur.com/JGHzwXl.gif">
+                </a>
+                <p style="margin: 0; background: rgba(255, 255, 255, 0.4); padding: 2px; border-radius: 5px;"><span style="font-family: Courier New; font-size: 0.8rem; color: #125ca6;">Click me for random character!</span></p>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="text-center mb-2">
+                <img style="width: 700px;" src="https://i.imgur.com/5K9OjSk.png">
+            </div>
+            <div style="border: 4px solid #fff; border-radius: 5px; background: no-repeat url('https://i.imgur.com/kcWbn6y.jpeg'); background-size: cover;">
+                <div style="background: url('https://i.imgur.com/1JPGfIw.png'); height: 50px; margin-top: -17px;"></div>
+                <div class="text-center mt-2">
+                    <h1 style="margin: 0;"><span style="font-family: Courier New; color: #fff;"><b>
+                    <!-- Title start -->
+                    ʚ Hello ɞ
+                    <!-- Title end -->
+                    </b></span></h1>
+                    <div class="text-center">
+                        <img src="https://i.imgur.com/2hW1OQq.gif" style="width: 600px;">
+                    </div>
+                    <p class="ml-5 mr-5" style="white-space: pre-wrap; background: rgba(255, 255, 255, 0.15); border-radius: 10px;"><span style="font-family: Courier New; color: #fff;"><!-- Description start -->Voluptatibus veritatis nostrum veritatis omnis dignissimos quos qui. Non voluptates temporibus adipisci. Sequi sapiente enim dignissimos sunt molestias. Repudiandae sed soluta et reprehenderit nisi laboriosam.
+
+Laudantium recusandae ex assumenda a facere accusantium. Quibusdam autem distinctio rerum. Eos sint inventore velit aperiam dolores nesciunt illo veritatis. Aspernatur expedita in qui. Dolor quasi praesentium possimus. Et ipsum cupiditate praesentium dolores placeat.
+<!-- Description end --></span></p>
+                </div>
+                <div class="text-center">
+                    <div class="fr-spoiler"> <!-- Delete this line to remove spoiler (#1) -->
+                        <!-- Replace the <img> link with your own card link -->
+                        <img style="width: 600px;" src="https://images.artfight.net/resources/2026-templates/Template_Tragedy.png">
+                    </div> <!-- Delete this line to remove spoiler (#2) -->
+                </div>
+            </div>
+            <div class="mt-4 d-flex justify-content-around flex-wrap">
+                <!-- Stamps start | the current amount is optimized for the layout, but feel free to add/remove -->
+                <img src="https://i.imgur.com/Q9bxQdZ.png">
+                <img src="https://i.imgur.com/dP7IeNp.gif">
+                <img src="https://i.imgur.com/e10Gl9D.png">
+                <img src="https://i.imgur.com/ngMlniE.gif">
+                <img src="https://i.imgur.com/37782m4.gif">
+                <img src="https://i.imgur.com/f8Wo3KD.png">
+                <img src="https://i.imgur.com/tkwNi3N.png">
+                <img src="https://i.imgur.com/IXVXZWZ.png">
+                <!-- Stamps end -->
+            </div>
+        </div>
+        <div class="col-auto ml-3" style="height: 100%;">
+            <div class="text-center pl-4" style="margin-top: -25px; margin-right: -170px;">
+                <!-- Replace the <img> with your profile picture link -->
+                <img style="width: 230px; height: 230px;" src="https://af.circlejourney.net/images/wormstonplaceholder.jpg">
+                <img style="width: 300px; height: 300px; margin-left: -270px;" src="https://i.imgur.com/XCxrfpF.png">
+                <img style="width: 120px; margin-top: -300px; margin-left: -140px;" src="https://i.imgur.com/CbIaRdJ.gif">
+                <img style="width: 200px; margin-left: -45px; margin-bottom: -40px;" src="https://i.imgur.com/3h0xUpn.png">
+            </div>
+            <div class="text-center" style="background: rgba(255, 255, 255, 0.4); border-radius: 5px; padding-top: 4px;">
+                <h4><span style="font-family: Courier New; color: #fff;">
+                age • lang • prns
+                </span></h4>
+            </div>
+            <div class="mt-4 d-flex flex-column align-items-center">
+                <!-- Blinkies start -->
+                <img class="mb-1" style="width: 200px;" src="https://i.imgur.com/VieZWik.gif">
+                <img class="mb-1" style="width: 200px;" src="https://i.imgur.com/iaZdBNo.gif">
+                <img class="mb-1" style="width: 200px;" src="https://i.imgur.com/47bzNxn.gif">
+                <img class="mb-1" style="width: 200px;" src="https://i.imgur.com/2VHE8Tx.gif">
+                <img class="mb-1" style="width: 200px;" src="https://i.imgur.com/sbk3ttq.gif">
+                <img class="mb-1" style="width: 200px;" src="https://i.imgur.com/VN26Kvc.gif">
+                <img class="mb-1" style="width: 200px;" src="https://i.imgur.com/JpzDn38.gif">
+                <img class="mb-1" style="width: 200px;" src="https://i.imgur.com/ygTGHkW.gif">
+                <img class="mb-1" style="width: 200px;" src="https://i.imgur.com/ZKpxtUV.gif">
+                <img class="mb-1" style="width: 200px;" src="https://i.imgur.com/UODEUAH.gif">
+                <img class="mb-1" style="width: 200px;" src="https://i.imgur.com/eBgvovP.gif">
+                <img class="mb-1" style="width: 200px;" src="https://i.imgur.com/Di2oyZq.gif">
+                <img class="mb-1" style="width: 200px;" src="https://i.imgur.com/ULLnYiz.gif">
+                <!-- Blinkies end -->
+                <div class="text-center mt-2">
+                    <img style="width: 80px;" src="https://i.imgur.com/2ar6m9x.gif">
+                    <p class="mt-1" style="font-size: 0.6rem;"><span style="font-family: Courier New; color: #fff;">code by <a href="https://toyhou.se/farewhales"><span style="color: #fff;">farewhales</span></a></span></p>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+`);
+  	});
+  	</script>
+  </body>
+</html>
