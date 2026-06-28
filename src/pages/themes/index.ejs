@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include("../../components/meta.ejs", {pageTitle: "Themes"}) %>
+  </head>
+  <body>
+    <%- include("../../components/banner.ejs") %>
+    <div class="container-layout">
+      <%- include("../../components/navbar.ejs", { current_page: "themes" }) %>
+      <div class="container container-main">
+        <div class="container-header">
+          <h1>Themes!</h1>
+          <p>Artfight/Toyhouse profile themes.
+          <small>It may take a while to load the preview for artfight themes, especially if you have slow internet.</small></p>
+        </div>
+        <div class="container-content">
+          <div class="theme-container">
+            <div class="theme-card">
+              <img class="theme-thumb gallery" src="https://i.imgur.com/K6utBVv.png">
+              <div class="theme-title">
+                <h3>[F2U HTML] Hazard | Artfight</h3>
+                <a class="content-button" href="themes/hazard.html">Preview</a>
+              </div>
+            </div>
+            <div class="theme-card">
+              <img class="theme-thumb gallery" src="https://i.imgur.com/dog6i8i.png">
+              <div class="theme-title">
+                <h3>[F2U HTML] Cupid | Artfight</h3>
+                <a class="content-button" href="themes/cupid.html">Preview</a>
+              </div>
+            </div>
+            <div class="theme-card">
+              <img class="theme-thumb gallery" src="https://i.imgur.com/slTQeE8.png">
+              <div class="theme-title">
+                <h3>[F2U HTML] Juicy | Artfight</h3>
+                <a class="content-button" href="themes/juicy.html">Preview</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/assets/scripts/modal.js"></script>
+  </body>
+</html>

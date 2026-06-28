@@ -20,29 +20,38 @@ if (fs.existsSync(icon)) {
   fs.copySync(icon, dest + "/favicon.ico");
 }
 
-const pages = path.join(__dirname, "src/pages");
-fs.readdirSync(pages).forEach((file) => {
-  if (!file.endsWith(".ejs")) return;
+function compileDir(srcDir, outDir) {
+  fs.mkdirSync(outDir, { recursive: true });
 
-  const inputFile = path.join(pages, file);
-  const outputFile = path.join(dest, file.replace(".ejs", ".html"));
+  fs.readdirSync(srcDir).forEach((file) => {
+    const inputFile = path.join(srcDir, file);
+    const stat = fs.statSync(inputFile);
 
-  console.log(`Compiling ${file} to ${path.basename(outputFile)}...`);
+    if (stat.isDirectory()) {
+      compileDir(inputFile, path.join(outDir, file));
+      return;
+    }
 
-  const fileContent = fs.readFileSync(inputFile, "utf8");
+    if (!file.endsWith(".ejs")) {
+      fs.copySync(inputFile, path.join(outDir, file));
+      return;
+    }
 
-  try {
-    const html = ejs.render(
-      fileContent,
-      {},
-      { filename: inputFile, root: __dirname },
+    const outputFile = path.join(outDir, file.replace(".ejs", ".html"));
+    console.log(
+      `Compiling ${path.relative(__dirname, inputFile)} -> ${path.relative(__dirname, outputFile)}...`
     );
 
-    fs.writeFileSync(outputFile, html);
-  } catch (err) {
-    console.error(`Error compiling ${file}:`, err);
-    process.exit(1);
-  }
-});
+    const fileContent = fs.readFileSync(inputFile, "utf8");
+    try {
+      const html = ejs.render(fileContent, {}, { filename: inputFile, root: __dirname });
+      fs.writeFileSync(outputFile, html);
+    } catch (err) {
+      console.error(`Error compiling ${file}:`, err);
+      process.exit(1);
+    }
+  });
+}
 
+compileDir(path.join(__dirname, "src/pages"), dest);
 console.log("Build complete!");

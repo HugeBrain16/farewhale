@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include("../../components/meta.ejs", {pageTitle: "Artfight Template"}) %>
+    <%- include("../../components/artfight.ejs") %>
+  </head>
+  <body style="margin: 0; background: inherit;">
+  	<iframe id="preview" class="if-artfight-preview" src="/assets/templates/artfight.html"></iframe>
+  	<script>
+  	$("#preview").on("load", function() {
+  		const doc = $(this.contentDocument);
+ 
+  		doc.find(".profile-description").html(``);
+  	});
+  	</script>
+  </body>
+</html>

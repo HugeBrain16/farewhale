@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include("../../components/meta.ejs", {pageTitle: "Artfight Template"}) %>
+    <%- include("../../components/artfight.ejs") %>
+  </head>
+  <body style="margin: 0; background: inherit;">
+  	<iframe id="preview" class="if-artfight-preview" src="/assets/templates/artfight.html"></iframe>
+  	<script>
+  	$("#preview").on("load", function() {
+  		const doc = $(this.contentDocument);
+ 
+  		doc.find(".profile-description").html(`
+<div class="pt-4" style="padding-left: 5%; padding-right: 5%; border: 8px solid #f50097; border-radius: 2px; width: 100%; height: 100%; background: no-repeat url('https://i.imgur.com/If1YRrr.jpeg'); background-size: cover; overflow-y: auto;">
+    <div class="row justify-content-center" style="gap: 8px;">
+        <div class="col-auto text-center" style="border: 4px solid #000; background: url('https://i.imgur.com/RNJk5QU.png'); background-size: 50%; height: 100%;">
+            <div class="pl-4 pr-4 pt-4">
+                <div class="pl-4 mb-4">
+                    <!-- PFP start | Replace the link with your profile picture -->
+                    <img style="width: 250px; height: 250px; border-radius: 20%;" src="https://af.circlejourney.net/images/wormstonplaceholder.jpg">
+                    <!-- PFP end -->
+                    <img style="width: 300px; height: 300px; margin-left: -270px;" src="https://i.imgur.com/bkGA6Fv.gif">
+                </div>
+                <div class="text-left p-2">
+                    <p style="font-family: Impact; letter-spacing: 1px; white-space: pre-line; color: #fff; font-size: 1.4rem;">
+                    <b style="color: #fdf;">Name:</b>
+                    <b style="color: #fdf;">Age:</b>
+                    <b style="color: #fdf;">Pronouns:</b>
+                    </p>
+                </div>
+                <img style="width: 150px;" src="https://i.imgur.com/aV7fwCt.gif">
+            </div>
+            <p class="text-left" style="margin-bottom: 0px; font-family: monospace;"><span style="color: #fff;"><small>
+            code by <a href="https://toyhou.se/farewhales" style="color: #8ff;">farewhales</a> <img style="vertical-align: -4px;" src="https://i.imgur.com/ayUYJZM.gif">
+            </small></span></p>
+        </div>
+        <div class="col-6 d-grid">
+            <div class="mb-4" style="border: 4px solid #f50097; background: no-repeat url('https://i.imgur.com/t1kTW3S.jpeg'); background-size: cover;">
+                <div style="background: rgba(0.0, 0.0, 0.0, 0.2);">
+                    <div class="pt-4 pl-4 pr-4">
+                        <h1 style="font-family: Impact; letter-spacing: 1px; margin-bottom: 0;"><span style="color: #faf;">
+                        <!-- Title start -->
+                        Hello!
+                        <!-- Title end-->
+                        </span></h1>
+                        <p style="font-family: Impact; letter-spacing: 0.5px; white-space: pre-wrap; font-size: 1.2rem; font-weight: bold;"><span style="color: #fff;">
+<!-- Description start -->
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<!-- Description end --></span></p>
+                    </div>
+                    <div class="text-center">
+                        <!-- Card start | Replace the link inside the quotes with your own card link, or you can remove this part -->
+                        <img style="width: 650px;" src="https://images.artfight.net/resources/2026-templates/Template_Tragedy.png">
+                        <!-- Card end -->
+                    </div>
+                    <div class="text-center">
+                        <img src="https://i.imgur.com/yluIfpk.gif">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 d-grid">
+            <div class="p-3 mb-4" style="background: url('https://i.imgur.com/SP865Rp.jpeg'); border: 4px solid #f50097;">
+                <div class="text-center">
+                    <!-- When adding new stamps, add 2 at a time -->
+                    <!-- Blinkies start | Replace the links with your preferred blinkies -->
+                    <img class="mb-2" style="max-width: 300px; width: 300px;" src="https://i.imgur.com/HDzKU1Z.gif">
+                    <img class="mb-2" style="max-width: 300px; width: 300px;" src="https://i.imgur.com/VHHxUaT.gif">
+                    <img class="mb-2" style="max-width: 300px; width: 300px;" src="https://i.imgur.com/EN67WbC.gif">
+                    <img class="mb-2" style="max-width: 300px; width: 300px;" src="https://i.imgur.com/d8OQHv1.gif">
+                    <!-- Blinkies end -->
+                    <div class="row row-cols-2 pl-4 pr-4 text-center">
+                        <!-- Stamps start | Replace the links with your preferred stamps -->
+                        <img style="max-width: 300px; width: 300px;" src="https://i.imgur.com/eeXBoNO.png">
+                        <img style="max-width: 300px; width: 300px;" src="https://i.imgur.com/weFPNrC.png">
+                        <img style="max-width: 300px; width: 300px;" src="https://i.imgur.com/wfj8jPy.gif">
+                        <img style="max-width: 300px; width: 300px;" src="https://i.imgur.com/FcPi9AF.png">
+                        <img style="max-width: 300px; width: 300px;" src="https://i.imgur.com/dmiQgYr.png">
+                        <img style="max-width: 300px; width: 300px;" src="https://i.imgur.com/36bP6XC.gif">
+                        <!-- Stamps end -->
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <h3 style="font-family: Impact; letter-spacing: 1px;"><span style="color: #fff;">
+                Click for random OC!
+                </span></h3>
+                <a href="https://randomurl.github.io">
+                    <!-- Optional: replace the link with your own picture -->
+                    <img class="fa-beat" style="width: 200px; --fa-animation-duration: 1s; --fa-beat-scale: 1.025;" src="https://i.imgur.com/2p1WTqD.gif">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+      `);
+  	});
+  	</script>
+  </body>
+</html>

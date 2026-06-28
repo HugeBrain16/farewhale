@@ -139,6 +139,54 @@ ul > li {
   background: linear-gradient(to right, #4fa3b6 0%, #135e6e 15%);
 }
 
+.theme-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 10px;
+  justify-content: center;
+}
+
+.theme-card {
+  display: inline-block;
+  border: 2px solid var(--color-border-thin);
+}
+
+.theme-thumb {
+  width: 350px;
+  height: 175px;
+}
+
+.theme-title h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.theme-title {
+  position: relative;
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+  background: #3a7380;
+  transition: 0.1s;
+  cursor: pointer;
+  user-select: none;
+}
+
+.theme-title:hover {
+  background: linear-gradient(to right, #4fa3b6, #135e6e);
+}
+
+.theme-title:active {
+  background-color: #a2d5e0;
+}
+
+.if-artfight-preview {
+  width: 100%;
+  height: 100vh;
+  border: none;
+}
+
 #banner h1 {
   font-size: 2.8rem;
 }

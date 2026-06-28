@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include("../../components/meta.ejs", {pageTitle: "Artfight Template"}) %>
+    <%- include("../../components/artfight.ejs") %>
+  </head>
+  <body style="margin: 0; background: inherit;">
+  	<iframe id="preview" class="if-artfight-preview" src="/assets/templates/artfight.html"></iframe>
+  	<script>
+  	$("#preview").on("load", function() {
+  		const doc = $(this.contentDocument);
+ 
+  		doc.find(".profile-description").html(`
+<!--
+[COLORS]
+Text   = #fc77ac
+Border = #fc77ac
+-->
+<div class="pt-4" style="padding-left: 5%; padding-right: 5%; border: 8px solid #fc77ac; border-radius: 2px; width: 100%; height: 100%; background: url('https://i.imgur.com/X6dpKp7.png'); background-size: 15%; overflow-y: auto;">
+    <div class="row justify-content-center" style="gap: 8px;">
+        <div class="d-grid">
+            <div class="text-center" style="border: 4px solid #fc77ac; background: url('https://i.imgur.com/uLFfWHn.png'); background-size: 85%;">
+                <img style="width: 100%;" src="https://i.imgur.com/ipXgeme.gif">
+                <div class="pl-3 pr-4 pt-3">
+                    <div class="pl-4 mb-4">
+                        <!-- PFP start | Replace the link with your profile picture
+                            (you need to crop the picture to a 1:1 square otherwise it would look stretched) -->
+                        <img style="width: 200px; height: 200px; border-radius: 2%;" src="https://af.circlejourney.net/images/wormstonplaceholder.jpg">
+                        <!-- PFP end -->
+                        <img style="width: 220px; height: 220px; margin-left: -210px;" src="https://i.imgur.com/lfIZOxe.gif">
+                    </div>
+                    <div class="text-left p-2">
+                        <p style="font-family: Arial; white-space: pre-line; color: #fc77ac; font-size: 1.4rem;">
+                        <b style="color: #fc77ac;">Name:</b>
+                        <b style="color: #fc77ac;">Age:</b>
+                        <b style="color: #fc77ac;">Pronouns:</b>
+                        </p>
+                    </div>
+                    <img src="https://i.imgur.com/WgD9BG7.png">
+                </div>
+            </div>
+            <div class="text-center">
+                <p class="text-left" style="margin-bottom: 0px; font-family: monospace;"><span style="color: #fc77ac;"><small>
+                code by <a href="https://toyhou.se/farewhales" style="color: #fc77ac;">farewhales</a>
+                </small></span></p>
+                <img class="mt-5" style="width: 200px;" src="https://i.imgur.com/03P9Wab.png">
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="mb-4" style="border: 4px solid #fc77ac; background: url('https://i.imgur.com/O2r0z4t.jpeg');">
+                <div style="background: url('https://i.imgur.com/4VkhTqZ.png'); height: 27px;"></div>
+                <div class="pt-4 pl-4 pr-4">
+                    <h1 style="font-family: Arial; letter-spacing: 1px; margin-bottom: 0;"><span style="color: #fc77ac;">
+                    <!-- Title start -->
+                    <img style="width: 40px; vertical-align: -2px;" src="https://i.imgur.com/7V6jlXS.gif">
+                    <span style="margin-right: 8%;"><!-- Text goes here -->⊱Hello!⊰</span>
+                    <img style="vertical-align: -5px; width: 650px;" src="https://i.imgur.com/4Y8oaMG.png">
+                    <img style="float: right;" src="https://i.imgur.com/M5i8JTR.gif">
+                    <!-- Title end-->
+                    </span></h1>
+                    <p style="font-family: Arial; white-space: pre-wrap; margin-bottom: 0; font-size: 1.2rem; font-weight: bold;"><span style="color: #fc77ac;">
+<!-- Description start -->
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<!-- Description end --></span></p>
+                    <!-- Card start | Replace the link with your own card (you can delete the line below if you want to remove the card) -->
+                    <img style="width: 600px;" src="https://images.artfight.net/resources/2026-templates/Template_Mystery.png">
+                    <!-- Card end -->
+                    <div class="text-center" style="float: right; margin-top: 120px;">
+                        <!-- Replace the link below with your own randomizer link -->
+                        <a href="https://randomurl.github.io">
+                            <!-- Replace the img link with your own character! -->
+                            <img src="https://i.imgur.com/gj7WFON.png"
+                            class="fa-bounce" style="width: 250px; --fa-bounce-start-scale-y: 1; --fa-bounce-jump-scale-x: 1; --fa-bounce-jump-scale-y: 1; --fa-bounce-land-scale-x: 1; --fa-bounce-land-scale-y: 1; --fa-animation-duration: 3s;">    
+                        </a>
+                        <div style="display: inline-block; padding-left: 90px; padding-right: 40px; background: no-repeat url('https://i.imgur.com/hfsjVHF.png'); background-size: cover; width: 250px; height: 250px;">
+                            <p class="text-left" style="font-family: Arial; white-space: pre-line; font-size: 1.4rem;"><span style="color: #222;">
+                            <!-- Speech bubble text start -->
+                            Click for random character!
+                            <!-- Speech bubble text end -->
+                            </span></p>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2 mb-2">
+                        <!-- Blinkies start -->
+                        <img style="width: 200px;" src="https://i.imgur.com/LYUzT0k.gif">
+                        <img style="width: 200px;" src="https://i.imgur.com/oRbuiSJ.gif">
+                        <img style="width: 200px;" src="https://i.imgur.com/BFdWgEY.gif">
+                        <img style="width: 200px;" src="https://i.imgur.com/59AX6Zt.gif">
+                        <img style="width: 200px;" src="https://i.imgur.com/Mm6vF63.gif">
+                        <!-- Blinkies end -->
+                    </div>
+                    <div class="text-center mb-2">
+                        <!-- Stamps start -->
+                        <img src="https://i.imgur.com/bCI37oj.png">
+                        <img src="https://i.imgur.com/mdyjD1s.gif">
+                        <img src="https://i.imgur.com/kguVE5F.png">
+                        <img src="https://i.imgur.com/wvBhp0M.png">
+                        <img src="https://i.imgur.com/jinx2u6.png">
+                        <img src="https://i.imgur.com/fdz2rxT.gif">
+                        <img src="https://i.imgur.com/irrUEV2.png">
+                        <img src="https://i.imgur.com/ktVxoAW.png">
+                        <img src="https://i.imgur.com/SKhXp63.png">
+                        <img src="https://i.imgur.com/6rhxKAp.png">
+                        <!-- Stamps end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+      `);
+  	});
+  	</script>
+  </body>
+</html>
