@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include("../../components/meta.ejs", {pageTitle: "Artfight Template"}) %>
+    <%- include("../../components/artfight.ejs") %>
+  </head>
+  <body style="margin: 0; background: inherit;">
+  	<iframe id="preview" class="if-artfight-preview" src="/assets/templates/artfight.html"></iframe>
+  	<script>
+  	$("#preview").on("load", function() {
+  		const doc = $(this.contentDocument);
+ 
+  		doc.find(".profile-description").html(`
+<div style="border: 8px solid #02360f; border-radius: 2px; width: 100%; height: 100%; background: no-repeat url('https://i.imgur.com/hL3Oyxk.jpeg'); background-size: cover; background-position: center -200px; overflow-y: auto;">
+    <div style="padding-left: 5%; padding-top: 2%; padding-right: 5%;">
+    	<div class="row justify-content-center no-gutters">
+            <div class="col-2 mr-3">
+                <!-- left box top png -->
+                <div class="text-center" style="margin-bottom: -4px;">
+                    <img style="width: 100px;" src="https://i.imgur.com/aeNQ4z4.png">
+                </div>
+                <!---->
+
+                <div class="mt-1" style="border: 4px solid #02360f; margin-top: -100px; background: url('https://i.imgur.com/dX5jgCG.jpeg'); background-size: 80%;">
+                    <div class="p-3">
+                        <!-- check/cross based on your preference! -->
+                        <p class="mb-2" style="margin: 0;"><span style="font-family: Courier New; color: #000; background: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 5px;">
+                            Revenges: <!-- check start --><i class="fa-solid fa-check"></i><!-- check end --> <!-- cross start --><i class="fa-solid fa-xmark"></i><!-- cross end -->
+                        </span></p>
+                        <p class="mb-2" style="margin: 0;"><span style="font-family: Courier New; color: #000; background: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 5px;">
+                            Friendly Fire: <!-- check start --><i class="fa-solid fa-check"></i><!-- check end --> <!-- cross start --><i class="fa-solid fa-xmark"></i><!-- cross end -->
+                        </span></p>
+                        <p class="mb-2" style="margin: 0;"><span style="font-family: Courier New; color: #000; background: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 5px;">
+                            Revenge Chains: <!-- check start --><i class="fa-solid fa-check"></i><!-- check end --> <!-- cross start --><i class="fa-solid fa-xmark"></i><!-- cross end -->
+                        </span></p>
+
+                        <!-- You can change/add the items of these lists -->
+                        <p class="mt-4" style="margin: 0; white-space: pre-line; background: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 5px;"><span style="font-family: Courier New; color: #000;">I can draw:
+                        - Thing
+                        - Thing
+                        - Thing
+                        - Thing
+                        </span></p>
+                        <p class="mt-2" style="margin: 0; white-space: pre-line; background: rgba(255, 255, 255, 0.4); padding: 5px; border-radius: 5px;"><span style="font-family: Courier New; color: #000;">I can't draw:
+                        - Thing
+                        - Thing
+                        - Thing
+                        - Thing
+                        </span></p>
+                    </div>
+                </div>
+
+                <!-- Character randomizer -->
+                <div class="text-center mt-4">
+                    <!-- Replace the <a> link with your own character randomizer link -->
+                    <a href="https://randomurl.github.io">
+                    <!-- (Optinal) Replace the <img> link with your own page doll image -->
+                        <img style="width: 200px;" src="https://i.imgur.com/wA7qBMv.gif">
+                        <p style="margin: 0; margin-top: -25px; padding: 2px;"><span style="font-family: Courier New; font-size: 0.8rem; color: #000; background: rgba(255, 255, 255, 0.4); border-radius: 5px; padding: 5px;">
+                        Click me!
+                        </span></p>
+                    </a>
+                </div>
+                <!---->
+
+            </div>
+            <div class="col-7" style="margin-top: -20px;">
+                <!-- middle box corner png -->
+                <img style="width: 150px; margin-bottom: -100px; margin-left: -50px;" src="https://i.imgur.com/fqMGhyK.png">
+
+                <div style="border: 4px solid #02360f; background: url('https://i.imgur.com/dX7nMdC.gif'); background-size: 15%;">
+                    <div class="text-center mt-2">
+                        <h1 style="margin: 0;"><span style="font-family: Courier New; color: #000;"><b>
+                        <img style="width: 50px;" src="https://i.imgur.com/ZaLXZ19.gif">
+                        <!-- Title start -->
+                        Hello
+                        <!-- Title end -->
+                        <img style="width: 50px;" src="https://i.imgur.com/ZaLXZ19.gif">
+                        </b></span></h1>
+
+                        <!-- Title divider -->
+                        <div class="text-center mt-2 mb-2">
+                            <img src="https://i.imgur.com/92m16GS.png" style="width: 500px;">
+                        </div>
+                        <!---->
+
+                        <p class="ml-5 mr-5"
+                        style="white-space: pre-wrap;
+                        background: rgba(255, 255, 255, 0.15);
+                        border-radius: 10px;"><span
+                        style="font-family: Courier New; color: #000;"
+><!-- Description start -->Quidem deleniti eum rerum perferendis iste quaerat inventore omnis. Inventore ex excepturi voluptas consectetur aut et. Est doloremque aut vel repellat iure similique neque voluptatibus. Dolores illo magnam autem est sit quia. Qui accusamus ipsam totam et sapiente sit doloribus.
+
+Assumenda quasi voluptate in quo asperiores. Porro eos nihil rerum fugiat aspernatur distinctio consequatur. Aspernatur cumque est iusto repellat quaerat nam aut iusto. Tenetur voluptas facilis recusandae. Sit temporibus rerum tenetur perspiciatis eligendi quidem.
+<!-- Description end --></span></p>
+
+                        <!-- Flower at the bottom of middle box -->
+                        <div style="background: url('https://i.imgur.com/F1v5pg9.png'); height: 170px;"></div>
+                    </div>
+                </div>
+                <div class="text-center mt-2">
+                    <h3 style="margin: 0; background: no-repeat url('https://i.imgur.com/dY7Gizp.png'); background-position: center -100px;"><span style="font-family: Courier New; color: #000;">
+                    <!-- Change this to either your featured characters or your friends you want others to attack -->
+                    <b>Featured/Friends:</b>
+                    </span></h3>
+                    <div class="mb-4 mt-2 d-flex flex-wrap justify-content-around">
+                        <!-- Replace the <a> link with your own character link
+                            you can also just replace the 0 with the character id
+                            OR if you put this as friends list, you replace the link with your friends link
+
+                            Replace the <img> link with the character/friend's icon link
+
+                            (you can add/remove an item, but 4 is the optimized amount) -->
+
+                        <!-- List item start -->
+                        <div class="text-center">
+                            <a href="https://artfight.net/character/0">
+                                <img src="https://af.circlejourney.net/images/wormstonplaceholder.jpg" style="width: 200px; height: 200px; border: 4px solid #02360f;">
+                            </a>
+                            <h4 class="mt-2" style="margin: 0;">
+                            <span style="font-family: Courier New; color: #fff; background: rgba(255, 255, 255, 0.5); border-radius: 5px;" class="px-2">
+                            Name Here
+                            </span></h4>
+                        </div>
+                        <!-- List item end -->
+
+                        <!-- List item start -->
+                        <div class="text-center">
+                            <a href="https://artfight.net/character/0">
+                                <img src="https://af.circlejourney.net/images/wormstonplaceholder.jpg" style="width: 200px; height: 200px; border: 4px solid #02360f;">
+                            </a>
+                            <h4 class="mt-2" style="margin: 0;">
+                            <span style="font-family: Courier New; color: #fff; background: rgba(255, 255, 255, 0.5); border-radius: 5px;" class="px-2">
+                            Name Here
+                            </span></h4>
+                        </div>
+                        <!-- List item end -->
+
+                        <!-- List item start -->
+                        <div class="text-center">
+                            <a href="https://artfight.net/character/0">
+                                <img src="https://af.circlejourney.net/images/wormstonplaceholder.jpg" style="width: 200px; height: 200px; border: 4px solid #02360f;">
+                            </a>
+                            <h4 class="mt-2" style="margin: 0;">
+                            <span style="font-family: Courier New; color: #fff; background: rgba(255, 255, 255, 0.5); border-radius: 5px;" class="px-2">
+                            Name Here
+                            </span></h4>
+                        </div>
+                        <!-- List item end -->
+
+                        <!-- List item start -->
+                        <div class="text-center">
+                            <a href="https://artfight.net/character/0">
+                                <img src="https://af.circlejourney.net/images/wormstonplaceholder.jpg" style="width: 200px; height: 200px; border: 4px solid #02360f;">
+                            </a>
+                            <h4 class="mt-2" style="margin: 0;">
+                            <span style="font-family: Courier New; color: #fff; background: rgba(255, 255, 255, 0.5); border-radius: 5px;" class="px-2">
+                            Name Here
+                            </span></h4>
+                        </div>
+                        <!-- List item end -->
+                    </div>
+                    <!-- Divider under characters/friends list -->
+                    <img src="https://i.imgur.com/2qFofkd.png">
+                </div>
+            </div>
+            <div class="col-auto ml-3" style="height: 100%; border: 4px solid #02360f; background: url('https://i.imgur.com/dX5jgCG.jpeg'); background-size: 140%;">
+                <div class="text-center" style="margin-right: -50px; margin-top: 10px;">
+                    <!-- PFP start | Replace the <img> with your profile picture link -->
+                    <img style="width: 200px; height: 200px;" src="https://af.circlejourney.net/images/icon.png">
+                    <!-- PFP end -->
+
+                    <!-- PFP frame start-->
+                    <img style="width: 300px; height: 300px; margin-left: -255px;" src="https://i.imgur.com/xibjlS8.png">
+                    <!-- PFP frame end -->
+                </div>
+                <div style="margin-left: -50px;">
+                    <div class="text-center" style="padding-top: 4px; margin-right: -50px;">
+                        <h4 style="background: url('https://i.imgur.com/dY7Gizp.png');"><span style="font-family: Courier New; color: #000; background: rgba(255, 255, 255, 0.4); border-radius: 5px; padding: 5px;">
+                        age • lang • prns
+                        </span></h4>
+                    </div>
+                    <div class="mt-4 d-flex flex-column align-items-center" style="margin-right: -50px;">
+                        <!-- Blinkies start -->
+                        <img class="mb-2" style="width: 200px;" src="https://i.imgur.com/HbjrwX6.gif">
+                        <img class="mb-2" style="width: 200px;" src="https://i.imgur.com/n0EVin1.gif">
+                        <img class="mb-2" style="width: 200px;" src="https://i.imgur.com/2gnn2K6.gif">
+                        <img class="mb-2" style="width: 200px;" src="https://i.imgur.com/A7wxcr4.gif">
+                        <img class="mb-2" style="width: 200px;" src="https://i.imgur.com/oOXiAk2.gif">
+                        <img class="mb-2" style="width: 200px;" src="https://i.imgur.com/nCWaS78.gif">
+                        <!-- Blinkies end -->
+                        <div class="d-flex flex-wrap" style="width: 50%;">
+                            <!-- Stamps start | Add/Remove 2 at a time -->
+                            <img class="m-1" src="https://i.imgur.com/a3zQ39y.png">
+                            <img class="m-1" src="https://i.imgur.com/2jX20IC.png">
+                            <img class="m-1" src="https://i.imgur.com/MArppyF.png">
+                            <img class="m-1" src="https://i.imgur.com/zeOrAIo.png">
+                            <!-- Stamps end -->
+                        </div>
+
+                        <!-- credit -->
+                        <div class="text-center mt-2">
+                            <img style="width: 80px;" src="https://i.imgur.com/G79HIOa.png">
+                            <p class="mt-1" style="font-size: 0.7rem;"><span style="font-family: Courier New; color: #000;">code by <a href="https://toyhou.se/farewhales"><span style="color: #000;">farewhales</span></a></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    	</div>
+    </div>
+</div>
+`);
+  	});
+  	</script>
+  </body>
+</html>
