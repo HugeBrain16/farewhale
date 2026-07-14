@@ -280,8 +280,13 @@ function createImage(image) {
   gallery.style.objectPosition = image["crop"] === undefined || image["crop"] === "default" ? "top center" : image["crop"];
   container.setAttribute("displaylink", 0);
   container.setAttribute("imagelinks", image["links"].join(","));
-  container.setAttribute("postDate", image["date"]);
-  container.setAttribute("title", image["date"]);
+
+  const meta = image["date"].split(";");
+  const date = meta[0].trim();
+  const title = meta[1].trim();
+
+  container.setAttribute("postDate", date);
+  container.setAttribute("title", `${title}${title === '' ? '' : '\n'}${date}`);
   gallery.setAttribute("aria-hidden", "false");
 
   if (image["tags"] !== undefined) {
