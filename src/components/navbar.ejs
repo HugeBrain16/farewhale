@@ -1,5 +1,6 @@
 <div class="container container-side">
   <div class="container-content">
+    <h2 style="margin-top: 0;">Personal</h2>
     <ul>
       <% const buttons = [
         { id: 'home', name: 'Home', href: '/index.html' },
@@ -7,9 +8,15 @@
         { id: 'music', name: 'Music', href: '/music.html' },
         { id: 'blogs', name: 'Blog', href: '/blog.html' },
         { id: 'collections', name: 'Collections', href: '/dump.html' },
-        { id: 'themes', name: 'Themes', href: '/themes' },
         { id: 'links', name: 'Links', href: '/links.html' },
-        { id: 'about', name: 'About me', href: '/about.html' }
+        { id: 'about', name: 'About me', href: '/about.html' },
+      ];
+
+      const buttons_misc = [
+        { id: 'themes', name: 'Themes', href: '/themes' },
+        { id: 'chat', name: 'Chat', href: '/chat.html' },
+        { id: 'archive', name: 'Archive', href: '#' },
+        { id: 'guestbook', name: 'Guestbook', href: 'https://farewhale.atabook.org' },
       ]; %>
 
       <% buttons.forEach(item => { %>
@@ -20,8 +27,11 @@
     </ul>
     <h2>Misc</h2>
     <ul>
-      <li><p class="content-navbutton"><a href="https://farewhale.atabook.org">Guestbook</a></p></li>
-      <li><p class="content-navbutton"><a href="#">Archive</a></p></li>
+      <% buttons_misc.forEach(item => { %>
+        <li>
+          <p class="content-navbutton <%= current_page == item.id ? 'content-navbutton-active' : '' %>"><a href="<%= current_page == item.id ? '#' : item.href %>"><%= item.name %></a></p>
+        </li>
+      <% }); %>
     </ul>
   </div>
 </div>
