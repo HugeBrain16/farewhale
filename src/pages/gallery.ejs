@@ -12,6 +12,10 @@
     <div class="container-layout">
       <%- include("../components/navbar.ejs", { current_page: "gallery" }) %>
       <div class="container container-main">
+        <div class="container-header">
+          <h1>Gallery!</h1>
+          <p>Things I like/random screenshots/my drawings</p>
+        </div>
         <div class="container-content">
           <p id="gallery-sort-text">Sort by: <select id="gallery-sort">
             <option value="latest">Latest</option>
@@ -21,7 +25,7 @@
             <option value="all">All</option>
           </select></p>
           <ul>
-            <li><input type="checkbox" class="gallery-filter-toggle" filter="hidden"> Show hidden</li>
+            <li class="block-highlight"><input type="checkbox" class="gallery-filter-toggle" filter="hidden"> Show hidden</li>
           </ul>
           <p id="shortcuts" class="silent"><i class="fa-regular fa-circle-question"></i> Viewer shortcuts</p>
           <div align="center">
