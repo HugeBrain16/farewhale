@@ -2,6 +2,10 @@
 <html>
   <head>
     <%- include("../components/meta.ejs", {pageTitle: "Gallery"}) %>
+    <link href="/assets/styles/gallery.css" rel="stylesheet">
+    <link href="/assets/styles/modal.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
   </head>
   <body>
     <%- include("../components/banner.ejs") %>
@@ -9,37 +13,110 @@
       <%- include("../components/navbar.ejs", { current_page: "gallery" }) %>
       <div class="container container-main">
         <div class="container-content">
-          <div id="walls">
-            <% const images = [
-              ["https://i.imgur.com/gFVaurF.gif"],
-              ["/assets/whale.png"],
-              ["https://media1.tenor.com/m/sCWDubfFPbkAAAAC/stalker-soc.gif"],
-              ["https://media.tenor.com/7PmDoi6Bt8sAAAAi/skat-bandit-stalker.gif"],
-              ["https://media1.tenor.com/m/cxKf4rSyAscAAAAC/walking-out-strelok-walking-out.gif"],
-              ["https://i.imgur.com/TlK7UTZ.png"],
-              ["https://media1.tenor.com/m/M3Ve8Isi6jYAAAAC/stalker-stalker-shadow-of-chernobyl.gif", 400],
-              ["https://i.pinimg.com/736x/88/76/0a/88760ac9bbe8df1f5ade7c06db3c3cbf.jpg", 600],
-              ["https://media1.tenor.com/m/bVT3x7s95MwAAAAC/gerard-way-mcr.gif", 400],
-              ["https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png"],
-              ["https://i.imgur.com/oTu8zXZ.png", 400],
-              ["https://i.imgur.com/x4BrM0k.jpeg", 400],
-              ["https://i.imgur.com/i7HsZy2.png"],
-              ["https://i.imgur.com/AsosNuJ.jpeg"],
-              ["https://i.imgur.com/ZteA1NF.png"],
-            ]; %>
-
-            <% images.forEach(image => { %>
-              <% if (image.length > 1) { %>
-                <img class="gallery" width="<%= image[1] %>px" src="<%= image[0] %>">
-              <% } else { %>
-                <img class="gallery" src="<%= image[0] %>">
-              <% } %>
-            <% }); %>
+          <p id="gallery-sort-text">Sort by: <select id="gallery-sort">
+            <option value="latest">Latest</option>
+            <option value="oldest">Oldest</option>
+          </select></p>
+          <p id="gallery-year-text">Year: <select id="gallery-year">
+            <option value="all">All</option>
+          </select></p>
+          <ul>
+            <li><input type="checkbox" class="gallery-filter-toggle" filter="hidden"> Show hidden</li>
+          </ul>
+          <p id="shortcuts" class="silent"><i class="fa-regular fa-circle-question"></i> Viewer shortcuts</p>
+          <div align="center">
+            <ul id="gallery-page">
+              <li id="gallery-page-prev">Prev</li>
+              <li id="gallery-page-pages"></li>
+              <li id="gallery-page-next">Next</li>
+            </ul>
           </div>
+          <div class="gallery-content"></div>
         </div>
       </div>
     </div>
-    <script src="/assets/scripts/modal.js"></script>
+    <script src="/assets/scripts/gallery.js"></script>
+    <script>
+      var filters = [];
+      var pageMax = 30;
+
+      function clearFilters() {
+        $(".gallery-filter-toggle").each(function() {
+          this.checked = false;
+        });
+      }
+
+      function clearUnsafeFilters() {
+        $(".gallery-filter-unsafe").each(function() {
+          this.checked = false;
+        });
+      }
+
+      function applyFilter(gallery) {
+        $(gallery).each(function() {
+          const image = $(this);
+
+          if (image.attr("tags") !== undefined) {
+            if (image.attr("tags").split(",").some(filter => filters.includes(filter))) {
+              image.css("display", "inline-grid");
+              image.siblings().css("display", "inherit");
+            } else {
+              image.css("display", "none");
+              image.siblings().css("display", "none");
+            }
+          }
+        });
+      }
+
+      injectYears();
+      loadPost(false, 0, pageMax, false, true);
+      clearFilters();
+
+      $("#shortcuts").attr("title", `Up Arrow/Shift+Space: Go back
+Down Arrow+Space: Go forward
+Left Arrow: Flip left
+Right Arrow: Flip Right
+Escape: Close`);
+
+      $(".gallery-filter-toggle").on("change", function() {
+        $(".gallery-filter-toggle").each(function() {
+          const cFilter = $(this);
+
+          if (cFilter.is(":checked"))
+            filters.push(cFilter.attr("filter"));
+          else
+            filters = filters.filter(val => val !== cFilter.attr("filter"))
+        });
+
+        applyFilter($(".gallery-container").find(".gallery"));
+      });
+
+      postLoadPost = function() {
+        applyFilter($(".gallery-container").find(".gallery"));
+      };
+
+      onModalOpened = function() {
+        applyFilter($(".modal-telescope").find(".gallery"));
+      };
+
+      $("#gallery-sort").on("change", function() {
+        if (this.value === "latest") {
+          loadPost(false, 0, pageMax, false, true);
+        } else if (this.value === "oldest") {
+          loadPost(true, 0, pageMax, false, true);
+        }
+      });
+
+      $("#gallery-year").on("change", function() {
+        page = 1;
+        const sort = $("#gallery-sort").val();
+
+        if (sort === "latest") {
+          loadPost(false, 0, pageMax, false, true);
+        } else if (sort === "oldest") {
+          loadPost(true, 0, pageMax, false, true);
+        }
+      });
     </script>
   </body>
 </html>

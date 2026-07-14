@@ -1,57 +1,93 @@
-var modal = document.createElement("div");
-var modalClose = document.createElement("span");
+var modal2 = document.createElement("div");
+var modalClose2 = document.createElement("span");
 
-modal.classList.add("modal");
-modalClose.classList.add("modal-close");
-modalClose.innerHTML = "&times;";
-modalClose.style.position = "fixed";
+modal2.classList.add("modal");
+modalClose2.classList.add("modal-close");
+modalClose2.innerHTML = "&times;";
+modalClose2.style.position = "fixed";
 
-function openModal(img) {
-  var modalContent = document.createElement("img");
-  var oldModalContent = modal.getElementsByTagName("img")[0];
-
-  if (oldModalContent) oldModalContent.remove();
-  modalContent.classList.add("modal-content");
-  modal.appendChild(modalContent);
-  modal.style.display = "flex";
-  modalContent.src = img;
-
-  modalContent.addEventListener('click', (event) => {
-    if (event.target = modalContent) {
-      modalContent.classList.toggle("zoomed");
+function addModalImage2(image) {
+  var oldContent = modal2.getElementsByClassName("modal-content")[0];
+  var content = document.createElement("div");
+  var contentImg = document.createElement("img");
+  content.classList.add("modal-content");
+  content.classList.add("placeholder");
+  content.style.cursor = "unset";
+  if (oldContent) oldContent.remove();
+  contentImg.addEventListener('click', (event) => {
+    if (event.target == contentImg && contentImg.style.opacity === "1") {
+      content.classList.toggle("zoomed");
     }
   });
+  contentImg.onload = function () {
+    content.classList.remove("placeholder");
+    contentImg.style.opacity = 1;
+    contentImg.style.cursor = "zoom-in";
+  };
+  content.appendChild(contentImg);
+  modal2.appendChild(content);
+  contentImg.src = image;
 }
 
-document.body.appendChild(modal);
-modalClose.onclick = function () {
-  modal.style.display = "none";
+function openModal2(image) {
+  modal2.style.display = "flex";
+  addModalImage2(image);
+}
+
+document.body.appendChild(modal2);
+modalClose2.onclick = function () {
+  modal2.style.display = "none";
 };
 
-modal.addEventListener('click', (event) => {
-  if (event.target === modal) {
-    modal.style.display = "none";
+modal2.addEventListener('click', (event) => {
+  var targetClass = event.target.classList;
+
+  if (targetClass.contains("modal-inner") || targetClass.contains("modal-content")) {
+    modal2.style.display = "none";
   }
 });
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
-    modal.style.display = "none";
+    modal2.style.display = "none";
   }
 });
 
-$(document).ready(function () {
-  var thumbs = $(".gallery");
+function getImage(url) {
+  if (!url.startsWith("https://i.imgur.com/"))
+    return url;
 
-  modal.appendChild(modalClose);
-  document.body.insertBefore(
-    modal,
-    document.getElementById("banner"),
-  );
+  var result = "";
+  var string = url.split("").reverse().join("");
+  var skipmode = false;
+  var skipped = false;
+
+  for (let c of string) {
+    if (skipmode) {
+      skipmode = false;
+      continue;
+    }
+
+    if (c === "." && !skipped) {
+      skipmode = true;
+      skipped = true;
+    }
+
+    result += c;
+  }
+
+  return result.split("").reverse().join("");
+}
+
+$(document).ready(function () {
+  var thumbs = $(".gallery-modal");
+
+  modal2.appendChild(modalClose2);
+  $("body").prepend(modal2);
 
   for (let i = 0; i < thumbs.length; i++) {
     thumbs[i].onclick = function () {
-      openModal(thumbs[i].src);
+      openModal2(getImage(thumbs[i].src));
     };
   }
 });

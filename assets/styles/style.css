@@ -33,6 +33,12 @@ ul > li {
   list-style: none;
 }
 
+.silent {
+  color: var(--color-highlight);
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
 .text-highlight {
   color: #00e1ff;
 }
@@ -247,6 +253,11 @@ ul > li {
 #walls img {
   width: -100%;
   max-width: 800px;
+}
+
+.likebtn-wrapper {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 @media (max-width: 1200px) {
