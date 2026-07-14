@@ -2,10 +2,11 @@
 
 :root {
   --color-background: #002e35;
-  --color-container-background: #004455;
+  --color-container-background: rgba(0, 68, 85, 0.7);
   --color-highlight: #7cb5c4;
   --color-border-thin: #a4d5e0;
-  --color-bg-highlight: #3a7380;
+  --color-bg-highlight: rgba(58, 115, 128, 0.5);
+  --color-bg-highlight-gradient: linear-gradient(to right, rgba(79, 163, 182, 0.7), rgba(19, 94, 110, 0.7));
   --text-shadow: drop-shadow(2px 2px #222);
   font-size: 18px;
 }
@@ -146,7 +147,7 @@ ul > li {
 }
 
 .content-navbutton:hover {
-  background: linear-gradient(to right, #4fa3b6, #135e6e);
+  background: var(--color-bg-highlight-gradient);
 }
 
 .content-navbutton:active {
@@ -154,7 +155,7 @@ ul > li {
 }
 
 .content-navbutton-active {
-  background: linear-gradient(to right, #4fa3b6, #135e6e);
+  background: var(--color-bg-highlight-gradient);
 }
 
 .content-code {
