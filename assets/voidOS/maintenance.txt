@@ -1,0 +1,6 @@
+To check the status of a server node, you can ping them with the ping command
+
+for example:
+ping alpha
+
+If the ping fails, you need to check on the server and restart it.

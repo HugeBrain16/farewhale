@@ -28,3 +28,4 @@ playaudio
 loopaudio
 stopaudio
 shutdown
+ping
