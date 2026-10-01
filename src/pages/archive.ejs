@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include("../components/meta.ejs", {pageTitle: "Archive"}) %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+    <link rel="stylesheet" href="/assets/styles/tree.css">
+  </head>
+  <body>
+    <%- include("../components/banner.ejs") %>
+    <div class="container-layout">
+      <%- include("../components/navbar.ejs", { current_page: "archive" }) %>
+      <div class="container container-main">
+        <div class="container-header">
+          <h1>Archive!</h1>
+        </div>
+        <div class="container-content">
+            <div class="tree-folder">
+                <div class="tree-label arc-label">Jerky.asi</div>
+                <div class="tree-content arc-item">
+                    <p>A mod for <b>Silent Hill 3 PC Version</b> that makes beef jerky usable as heal item
+
+                        links:
+                        - <a class="content-button" href="https://github.com/hugebrain16/jerky">Github</a>
+                        - <a class="content-button" href="https://www.moddb.com/games/silent-hill-3/addons/jerkyasi">Moddb</a>
+                    </p>
+                </div>
+                <div class="tree-content arc-item"><a class="content-button" href="https://file.garden/aOf31PFhxWt7Kbzd/Archive/Jerky/jerky-v1.1.zip">Jerky-v1.1.zip</a></div>
+                <div class="tree-content arc-item"><a class="content-button" href="https://file.garden/aOf31PFhxWt7Kbzd/Archive/Jerky/jerky-v1.0.zip">Jerky-v1.0.zip</a></div>
+            </div>
+            <div class="tree-folder">
+                <div class="tree-label arc-label">About.txt</div>
+                <div class="tree-content arc-item">
+                    <p>Welcome to farewhale's archive!
+
+                    here are stuff that i just feel like putting as "archived", not necessarily just for this website's pages
+                    (i know this is not the most practical way of doing this btw... i just like it cuz of the visuals)
+                    </p>
+                <div>
+            </div>
+        </div>
+      </div> 
+    </div>
+    <script src="/assets/scripts/modal.js"></script>
+    <script src="/assets/scripts/tree.js"></script>
+  </body>
+</html>

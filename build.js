@@ -8,9 +8,10 @@ const icon = path.join(__dirname, "favicon.ico");
 console.log("Building...");
 
 if (fs.existsSync(dest)) {
-  fs.removeSync(dest);
+  fs.emptyDirSync(dest);
+} else {
+  fs.mkdirSync(dest);
 }
-fs.mkdirSync(dest);
 
 console.log("Copying assets...");
 fs.copySync(path.join(__dirname, "assets"), path.join(dest, "assets"));
